@@ -1,0 +1,2 @@
+class UserProviders:
+    pass
