@@ -5,5 +5,5 @@ def test_lists():
     #identical to assert
 
 
-def test_lists_fail():
+def test_lists_failed():
     assert ["a",2,3] == [1,2,3]
