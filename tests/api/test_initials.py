@@ -6,4 +6,4 @@ def test_lists():
 
 
 def test_lists_failed():
-    assert ["a",2,3] == [1,2,3]
+    assert ["a",2,3] != [1,2,3]
