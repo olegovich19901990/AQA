@@ -1,0 +1,28 @@
+#from config.config import Config
+#from applications.api.github_api import GitHubAPI
+import pytest 
+#from selenium.webdriver.chrome.service import Service
+from applications.ui.github_ui import GitHubUI
+from config.config import Config
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
+#@pytest.fixture(scope='session')
+#def github_api_client():
+#    github_api_client = GitHubAPI(Config.base_url, 'v1')
+
+ #   yield github_api_client 
+    
+#    print("END-UP TEST") 
+
+@pytest.fixture()
+def github_ui_client():
+    driver = webdriver.Chrome(
+        service=Service(r"/home/aqa/my_project/chromedriver")
+    )
+
+    github_ui_client = GitHubUI(Config.base_url_ui, driver)
+
+    yield github_ui_client
+
+    github_ui_client.close_browser()
